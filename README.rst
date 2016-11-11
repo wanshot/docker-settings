@@ -20,6 +20,21 @@ CentOS
    $ cd centos
    $ docker-compose build --no-cache
 
+   # ソースコード共有フォルダをマウント
+   $ vim docker-compose.yaml
+
+
+::
+
+   volumes:
+   # write your beproudbot path
+   # sample
+   # - /Users/wan/Work/bp/beproudbot:/beproudbot
+   ※ここに上記を参考にコンテナと共有するフォルダのパスを記載する
+
+
+.. code-block:: shell
+
    # 環境の起動
    $ docker-compose up -d
    $ docker-compose run --rm bot bash

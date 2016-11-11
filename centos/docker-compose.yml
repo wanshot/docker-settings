@@ -14,3 +14,7 @@ services:
     build: .
     links:
       - db
+    volumes:
+      # write your beproudbot path
+      # sample
+      # - /Users/wan/Work/bp/beproudbot:/beproudbot
