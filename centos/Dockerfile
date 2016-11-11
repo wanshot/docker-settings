@@ -51,11 +51,7 @@ RUN python3.5 get-pip.py
 
 RUN pip3 install PyMySQL
 
-# RUN pip3 install virtualenv
-# RUN python3.5 -m venv env
-# RUN source /root/env/bin/activate
-
-# ENV MYSQL_HOST mysql
+ENV MYSQL_HOST db
 
 ADD . /app
 WORKDIR /app
