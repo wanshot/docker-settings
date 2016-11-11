@@ -48,12 +48,11 @@ RUN cd /opt \
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python3.5 get-pip.py
 
-
-RUN pip3 install PyMySQL
-
 ENV MYSQL_HOST db
 
 ADD . /app
 WORKDIR /app
+
+RUN pip3 install -r requirements.txt
 
 CMD ["/bin/bash"]
