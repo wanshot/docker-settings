@@ -20,7 +20,7 @@ CentOS
    $ cd centos
    $ docker-compose build --no-cache
 
-   # ソースコード共有フォルダをマウント
+   # beproudbotのソースコードがあるフォルダをマウントする為、docker-compose.yamlを編集する
    $ vim docker-compose.yaml
 
 
@@ -42,7 +42,9 @@ CentOS
    [root@aa4a7143f3f4 app]# python3.5 connect_mysql_test.py
    {'password': 'very-secret', 'id': 1}
 
-	# 終了
+.. code-block:: shell
+
+   # 終了
    $ docker-compose stop
    $ docker-compose down
 
