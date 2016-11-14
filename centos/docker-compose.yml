@@ -18,3 +18,4 @@ services:
       # write your beproudbot path
       # sample
       # - /Users/wan/Work/bp/beproudbot:/beproudbot
+      - /Users/wan/work/bott:/bot
