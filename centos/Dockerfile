@@ -32,7 +32,7 @@ RUN yum -y install \
            git \
            gdbm-devel \
            python-devel\
-					 vim
+           vim
 
 # Pythonのインストール
 RUN cd /opt \

@@ -5,11 +5,14 @@ docker-settings
 
    # MySQLのimageをpull
    $ docker pull mysql:5.7
+   # データストア用のbusyboxのimageをpull
+   # docker pull busybox
 
    # 確認
    $ docker images
    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
    mysql               5.7                 cd88b71c6c8c        2 days ago          383.4 MB
+   busybox             latest              e02e811dd08f        5 weeks ago         1.093 MB
 
 CentOS
 --------------

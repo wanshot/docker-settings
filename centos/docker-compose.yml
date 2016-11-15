@@ -1,5 +1,11 @@
 version: '2'
 services:
+  datastore:
+    image: busybox
+    volumes:
+        - /var/lib/mysql
+    container_name: mysql-datastore
+    tty: true
   db:
     image: mysql:5.7
     environment:
@@ -10,6 +16,8 @@ services:
       - "3306"
     volumes:
       - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    volumes_from:
+      - datastore
   bot:
     build: .
     links:
@@ -19,3 +27,5 @@ services:
       # sample
       # - /Users/wan/Work/bp/beproudbot:/beproudbot
       - /Users/wan/work/bott:/bot
+    volumes_from:
+      - datastore
