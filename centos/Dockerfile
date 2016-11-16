@@ -45,8 +45,8 @@ RUN cd /opt \
     && rm -rf Python-3.5.2/
 
 # pipインストール
-RUN wget https://bootstrap.pypa.io/get-pip.py
-RUN python3.5 get-pip.py
+RUN wget https://bootstrap.pypa.io/get-pip.py \
+    && python3.5 get-pip.py
 
 ENV MYSQL_HOST db
 
