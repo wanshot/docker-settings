@@ -88,7 +88,7 @@ Tips
 
    # DataVolumeContainerにDataVolumeをレストア
    # Docker 1.8.x and below
-   $ docker run --rm --volumes-from mysql-datastore -v $(pwd):/backup busybox tar cvf /backup/backup.tar /var/lib/mysql
+   $ docker run --rm --volumes-from mysql-datastore -v $(pwd):/backup busybox tar cvf /backup/backup.tar
 
 
 .. code-block:: shell
