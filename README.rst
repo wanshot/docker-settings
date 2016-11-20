@@ -40,7 +40,7 @@ CentOS
 
    # 環境の起動
    $ docker-compose up -d
-   $ docker-compose run --rm bot bash
+   $ docker-compose run --rm app bash
    # MySQLとの疎通確認
    [root@aa4a7143f3f4 app]# python3.5 connect_mysql_test.py
    {'password': 'very-secret', 'id': 1}
@@ -75,9 +75,24 @@ Tips
 .. code-block:: shell
 
    # DataVolumeContainerからDataVolumeをバックアップ
+   # Docker 1.8.x and below
    $ docker run --rm --volumes-from mysql-datastore -v $(pwd):/backup busybox tar cvf /backup/backup.tar /var/lib/mysql
    # --rm: コンテナのプロセスが終了すると、コンテナを削除
    # --volumes-from: DataVolumeContainer名を指定
    # -v {host}:{container}: ホストのディレクトリをコンテナのディレクトリにマウント
    # busybox: DataVolumeバックアップに使用するimage名
    # tar cvf /backup/backup.tar /var/lib/mysql: コンテナで実行するコマンド
+
+
+.. code-block:: shell
+
+   # DataVolumeContainerにDataVolumeをレストア
+   # Docker 1.8.x and below
+   $ docker run --rm --volumes-from mysql-datastore -v $(pwd):/backup busybox tar cvf /backup/backup.tar /var/lib/mysql
+
+
+.. code-block:: shell
+
+   # MySQLコンテナに接続
+   $ docker exec -it mysql bash
+   root@38ecc8a8cbad:/# mysql -u root -p
