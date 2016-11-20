@@ -40,6 +40,14 @@ CentOS
 
    # 環境の起動
    $ docker-compose up -d
+   # 起動確認
+   % docker-compose ps
+   Name                   Command             State     Ports
+   -----------------------------------------------------------------
+   bot               /bin/bash                     Exit 0
+   mysql             docker-entrypoint.sh mysqld   Up       3306/tcp
+   mysql-datastore   sh                            Up
+   # botコンテナに入る
    $ docker-compose run --rm app bash
    # MySQLとの疎通確認
    [root@aa4a7143f3f4 app]# python3.5 connect_mysql_test.py
@@ -47,8 +55,9 @@ CentOS
 
 .. code-block:: shell
 
-   # 終了
+   # コンテナの停止
    $ docker-compose stop
+   # コンテナの停止後、削除
    $ docker-compose down
 
 
@@ -88,7 +97,7 @@ Tips
 
    # DataVolumeContainerにDataVolumeをレストア
    # Docker 1.8.x and below
-   $ docker run --rm --volumes-from mysql-datastore -v $(pwd):/backup busybox tar cvf /backup/backup.tar
+   $ docker run --rm --volumes-from mysql-datastore -v $(pwd):/backup busybox tar xvf /backup/backup.tar
 
 
 .. code-block:: shell
