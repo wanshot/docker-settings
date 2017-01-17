@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS app_test;
-DROP TABLE IF EXISTS `app_test`.`user`;
+CREATE DATABASE IF NOT EXISTS beproudbot;
+DROP TABLE IF EXISTS `beproudbot`.`user`;
 CREATE TABLE `users` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `email` varchar(255) COLLATE utf8_bin NOT NULL,

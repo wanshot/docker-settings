@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 
 # dialect+driver://username:password@host:port/database
-url = 'mysql+pymysql://root:password@db/app_test?charset=utf8'
+url = 'mysql+pymysql://root:password@db/beproudbot?charset=utf8'
 engine = create_engine(url, echo=True)
 
 engine.execute('CREATE TABLE drink (name VARCHAR(20) PRIMARY KEY, price INT)')

@@ -10,8 +10,9 @@ services:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: app_test
+      MYSQL_DATABASE: beproudbot
       MYSQL_USER: root
+      TZ: "Asia/Tokyo"
     expose:
       - "3306"
     volumes:
@@ -23,11 +24,13 @@ services:
     build: .
     links:
       - db
+    environment:
+      TZ: "Asia/Tokyo"
     volumes:
       # write your beproudbot path
       # sample
-      # - /Users/wan/Work/bp/beproudbot:/beproudbot
-      - /Users/wan/work/bott:/bot
+      - /Users/wan/Work/bp/beproudbot:/beproudbot
+#       - /Users/wan/work/bott:/bot
     volumes_from:
       - datastore
     container_name: bot

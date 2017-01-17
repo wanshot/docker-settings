@@ -5,7 +5,7 @@ connection = pymysql.connect(host='db',
                              port=3306,
                              user='root',
                              password='password',
-                             db='app_test',
+                             db='beproudbot',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
 
